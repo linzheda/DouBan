@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zd.mapper.BookMapper">
+	<cache />
+
+
+	<select id="findOne" resultMap="showBook" parameterType="Book">
+		select
+		b_id,b_name,b_isbn,b_price,b_author,b_c_id,b_br_id,b_pdfs,b_description,c_name from book b
+		inner join category c
+		on b.b_c_id=c.c_id
+		where b_id=#{b_id}
+	</select>
+
+	<select id="showbook" resultMap="showBook" parameterType="Book">
+		select
+		b_id,b_name,b_isbn,b_price,b_author,b_c_id,b_br_id,b_pdfs,b_description,c_name from book b
+		inner join category c
+		on b.b_c_id=c.c_id
+	</select>
+	<select id="showbookBycid" resultMap="showBook" parameterType="Book">
+		select
+		b_id,b_name,b_isbn,b_price,b_author,b_c_id,b_br_id,b_pdfs,b_description,c_name from book b
+		inner join category c
+		on b.b_c_id=c.c_id
+		where b_c_id=#{b_c_id}
+	</select>
+
+	<resultMap type="Book" id="showBook">
+		<id property="b_id" column="b_id" />
+		<result property="b_name" column="b_name" />
+		<result property="b_isbn" column="b_isbn" />
+		<result property="b_price" column="b_price" />
+		<result property="b_author" column="b_author" />
+		<result property="b_c_id" column="b_c_id" />
+		<result property="b_pdfs" column="b_pdfs" />
+		<result property="b_description" column="b_description" />
+		<result property="b_br_id" column="b_br_id" />
+		<result property="b_c_name" column="c_name" />
+	</resultMap>
+
+	<insert id="addBook" useGeneratedKeys="true" keyProperty="b_id">
+		insert
+		into book (b_name,b_isbn,b_author,b_price,b_c_id,b_pdfs,b_description)
+		values
+		(#{b_name},#{b_isbn},#{b_author},#{b_price},#{b_c_id},#{b_pdfs},#{b_description})
+	</insert>
+
+	<update id="updateBook" parameterType="Book">
+		update book set
+		b_name = #{b_name},
+		b_isbn = #{b_isbn},
+		b_author = #{b_author},
+		b_price = #{b_price},
+		b_c_id = #{b_c_id},
+		b_description=#{b_description}
+		<if test="b_pdfs!=null and b_pdfs!='' ">
+			,b_pdfs=#{b_pdfs}  
+		</if>
+		where b_id = #{b_id}
+	</update>
+
+
+
+</mapper>

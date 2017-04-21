@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TimerTasks>
+	<TimerTask_1>
+		<name>1</name>
+		<id>1</id>
+		<gropuid>1</gropuid>
+		<status>1</status>
+		<time>cron="0 0 10 * * ? "</time>
+	</TimerTask_1>
+	
+	
+	<TimerTask_2>
+		<name>2</name>
+		<id>2</id>
+		<gropuid>2</gropuid>
+		<status>1</status>
+		<time>cron="0 0 10 * * ? "</time>
+	</TimerTask_2>
+	<TimerTask_3>
+		<name>3</name>
+		<id>3</id>
+		<gropuid>3</gropuid>
+		<status>1</status>
+		<time>cron="0 0 10 * * ? "</time>
+	</TimerTask_3>
+	<TimerTask_4>
+		<name>4</name>
+		<id>4</id>
+		<gropuid>4</gropuid>
+		<status>1</status>
+		<time>cron="0 0 10 * * ? "</time>
+	</TimerTask_4>
+	<TimerTask_5>
+		<name>5</name>
+		<id>5</id>
+		<gropuid>5</gropuid>
+		<status>1</status>
+		<time>cron="0 0 10 * * ? "</time>
+	</TimerTask_5>
+
+</TimerTasks>
