@@ -56,8 +56,8 @@
 				<p>
 					<label for="pdfs">已上传的电子书: </label><br>
 					<ul>
-						<c:forEach items="${book.pdfsStringList} " var="pdfUrl">
-							<li><a href="${pdfUrl}">下载</a></li>
+						<c:forEach items="${book.pdfsStringList}" var="pdfUrl">
+							<li><a href=${pdfUrl}  title='${book.pdfsStringList}'>下载</a></li>
 						</c:forEach>
 					</ul>
 					<div id="uploadFiles">

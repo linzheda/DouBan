@@ -59,6 +59,7 @@ public class UserBookController {
 		Book b=new Book();
 		b.setB_id(Integer.parseInt(b_id));
 		b=this.bb.findOne(b);
+		System.out.println(b);
 		ModelAndView mv=new ModelAndView("detailBook");
 		mv.addObject("book", b);
 		return mv;

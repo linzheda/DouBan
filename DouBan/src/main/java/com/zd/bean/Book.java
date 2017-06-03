@@ -29,9 +29,10 @@ public class Book implements Serializable {
 		 if(b_pdfs!=null&&b_pdfs.length()>0){
 			 String[] strs=b_pdfs.split("-");
 			 for(String s:strs){
-				 list.add(s.toString());
+				 list.add(s);
 			 }
 		 }
+		 
 		 return list;
 	}
 	
